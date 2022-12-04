@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NotAnOrganHarvestingOperation.INC</title>
+</head>
+<header>
+    <h1>NotAnOrganHarvestingOperation.INC</h1>
+    <a href="../../index.html">
+        <img src="../../images/rimworld_logo.png" alt="NotAnOrganHarvestingOperation.INC logo">
+    </a>
+</header>
+<nav>
+    <h1>Home</h1>
+    <ul>
+        <li><a href="../../pages/doctor/list.html">Doctors</a></li>
+        <li><a href="../../pages/operation/list.html">Operations</a></li>
+        <li><a href="../../pages/willingOrganDonor/list.html">WillingOrganDonors</a></li>
+        <li><a href="../../pages/organ/list.html">Organs</a></li>
+    </ul>
+</nav>
+
+
+<main>
+    <h2>New Operation</h2>
+    <form>
+        <label for="WillingOrganDonor">WillingOrganDonor: *</label>
+        <select name="WillingOrganDonor" id="WillingOrganDonor" required>
+            <option>-- Choose WillingOrganDonor --</option>
+            <option value="1">Jonathan Mother</option>
+        </select>
+        <span id="errorWillingOrganDonor">Field is required</span>
+        <br>
+
+        <label for="Doctor">Doctor: *</label>
+        <select name="Doctor" id="Doctor" required>
+            <option>-- Choose Doctor --</option>
+            <option value="1">John The Chopper</option>
+        </select>
+        <span id="errorDoctor">Field is required</span>
+        <br>
+
+        <label for="Organ">Organ: *</label>
+        <select name="Organ" id="Organ" required>
+            <option>-- Choose Organ --</option>
+            <option value="1">Heart</option>
+        </select>
+        <span id="errorOrgan">Field is required</span>
+        <br>
+
+        <label for="Successful">Successful: *</label>
+        <input type="checkbox" name="Successful" id="Successful" required/>
+        <span id="errorSuccessful">Field is required</span>
+        <br>
+
+        <label for="BedNumber">BedNumber: *</label>
+        <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" required/>
+        <span id="errorBedNumber">Field is required</span>
+        <br>
+
+        <label for="OperationTimestamp">OperationTimestamp: *</label>
+        <input type="date" name="OperationTimestamp" id="OperationTimestamp" required/>
+        <span id="errorOperationTimestamp">Field is required</span>
+        <br>
+
+        <div>
+            <p id="errorsSummary">Form contains errors</p>
+            <input type="submit" value="Submit" /> <br>
+            <a href="../../pages/operation/list.html">Cancel</a>
+        </div>
+
+    </form>
+</main>
+
+
+<footer>
+    Maciej Czupyt s22405
+</footer>
+</html>
