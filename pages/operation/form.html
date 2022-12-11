@@ -26,13 +26,11 @@
     <h2>New Operation</h2>
     <form class="form">
         <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
-        <br>
         <select name="WillingOrganDonor" id="WillingOrganDonor" required>
             <option>-- Choose WillingOrganDonor --</option>
             <option value="1">Jonathan Mother</option>
         </select>
         <span id="errorWillingOrganDonor" class="errors-text"></span>
-        <br>
 
         <label for="Doctor">Doctor:  <span class="symbol-required">*</span></label>
         <select name="Doctor" id="Doctor" required>
@@ -40,7 +38,6 @@
             <option value="1">Barry The Chopper</option>
         </select>
         <span id="errorDoctor" class="errors-text"></span>
-        <br>
 
         <label for="Organ">Organ:  <span class="symbol-required">*</span></label>
         <select name="Organ" id="Organ" required>
@@ -48,27 +45,22 @@
             <option value="1">Heart</option>
         </select>
         <span id="errorOrgan" class="errors-text"></span>
-        <br>
 
         <label for="Successful">Successful:  <span class="symbol-required">*</span></label>
         <input type="checkbox" name="Successful" id="Successful" required/>
         <span id="errorSuccessful" class="errors-text"></span>
-        <br>
 
         <label for="BedNumber">BedNumber:  <span class="symbol-required">*</span></label>
         <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" required/>
         <span id="errorBedNumber" class="errors-text"></span>
-        <br>
 
         <label for="OperationTimestamp">OperationTimestamp:  <span class="symbol-required">*</span></label>
         <input type="date" name="OperationTimestamp" id="OperationTimestamp" required/>
         <span id="errorOperationTimestamp" class="errors-text"></span>
-        <br>
 
         <div class="form-buttons">
             <p id="errorsSummary"></p>
             <input type="submit" value="Submit" class="form-button-submit" />
-            <br>
             <a href="../../pages/operation/list.html" class="form-button-cancel">Cancel</a>
         </div>
 
