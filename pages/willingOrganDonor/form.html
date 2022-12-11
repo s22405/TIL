@@ -25,7 +25,7 @@
 
 <main>
     <h2>New WILLING Organ Donor</h2>
-    <form>
+    <form class="form">
         <label for="Name">Name:  <span class="symbol-required">*</span></label>
         <input type="text" name="Name" id="Name" required />
         <span id="errorName"></span>
@@ -45,10 +45,11 @@
         <input type="date" name="PatientTill" id="PatientTill"/>
         <span id="errorPatientTill"></span>
 
-        <div>
+        <div class="form-buttons">
             <p id="errorsSummary"></p>
-            <input type="submit" value="Submit" /> <br>
-            <a href="../../pages/willingOrganDonor/list.html">Cancel</a>
+            <input type="submit" value="Submit" class="form-button-submit" />
+            <br>
+            <a href="../../pages/willingOrganDonor/list.html" class="form-button-cancel">Cancel</a>
         </div>
 
     </form>

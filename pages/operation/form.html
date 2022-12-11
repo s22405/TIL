@@ -24,7 +24,7 @@
 
 <main>
     <h2>New Operation</h2>
-    <form>
+    <form class="form">
         <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
         <br>
         <select name="WillingOrganDonor" id="WillingOrganDonor" required>
@@ -65,10 +65,11 @@
         <span id="errorOperationTimestamp"></span>
         <br>
 
-        <div>
+        <div class="form-buttons">
             <p id="errorsSummary"></p>
-            <input type="submit" value="Submit" /> <br>
-            <a href="../../pages/operation/list.html">Cancel</a>
+            <input type="submit" value="Submit" class="form-button-submit" />
+            <br>
+            <a href="../../pages/operation/list.html" class="form-button-cancel">Cancel</a>
         </div>
 
     </form>
