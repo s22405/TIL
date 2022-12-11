@@ -25,38 +25,38 @@
 <main>
   <h2>New Operation</h2>
   <form>
-    <label for="WillingOrganDonor">WillingOrganDonor: *</label>
+    <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
     <select name="WillingOrganDonor" id="WillingOrganDonor" required>
       <option value="1">Jonathan Mother</option>
     </select>
     <span id="errorWillingOrganDonor"></span>
     <br>
 
-    <label for="Doctor">Doctor: *</label>
+    <label for="Doctor">Doctor:  <span class="symbol-required">*</span></label>
     <select name="Doctor" id="Doctor" required>
       <option value="1">Barry The Chopper</option>
     </select>
     <span id="errorDoctor"></span>
     <br>
 
-    <label for="Organ">Organ: *</label>
+    <label for="Organ">Organ:  <span class="symbol-required">*</span></label>
     <select name="Organ" id="Organ" required>
       <option value="1">Heart</option>
     </select>
     <span id="errorOrgan"></span>
     <br>
 
-    <label for="Successful">Successful: *</label>
+    <label for="Successful">Successful:  <span class="symbol-required">*</span></label>
     <input type="checkbox" name="Successful" id="Successful" checked required/>
     <span id="errorSuccessful"></span>
     <br>
 
-    <label for="BedNumber">BedNumber: *</label>
+    <label for="BedNumber">BedNumber:  <span class="symbol-required">*</span></label>
     <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" value="1" required/>
     <span id="errorBedNumber"></span>
     <br>
 
-    <label for="OperationTimestamp">OperationTimestamp: *</label>
+    <label for="OperationTimestamp">OperationTimestamp:  <span class="symbol-required">*</span></label>
     <input type="date" name="OperationTimestamp" id="OperationTimestamp" value="5500-04-06" required/>
     <span id="errorOperationTimestamp"></span>
     <br>
