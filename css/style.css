@@ -237,10 +237,6 @@ textarea {
     margin-bottom: 0.5rem;/*who's rem*/
 }
 
-.symbol-required {
-    color: #c0392b;
-}
-
 .form-buttons {
     margin-top: 2rem; /*still don't know who rem is*/
 }

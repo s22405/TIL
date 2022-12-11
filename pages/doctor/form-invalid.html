@@ -14,7 +14,7 @@
 <nav>
     <ul>
         <li><a href="../../index.html">Home</a></li>
-        <li><a href="../../pages/doctor/list.html">Doctors</a></li>
+        <li><a href="../../pages/doctor/list.html" class="active">Doctors</a></li>
         <li><a href="../../pages/operation/list.html">Operations</a></li>
         <li><a href="../../pages/willingOrganDonor/list.html">WillingOrganDonors</a></li>
         <li><a href="../../pages/organ/list.html">Organs</a></li>
@@ -28,24 +28,21 @@
         <label for="Name">Name:  <span class="symbol-required">*</span></label>
         <input type="text" name="Name" id="Name" required />
         <span id="errorName" class="errors-text">Field is required</span>
-        <br>
 
         <label for="DateJoin">DateJoin:  <span class="symbol-required">*</span></label>
         <input type="date" name="DateJoin" id="DateJoin" required />
         <span id="errorDateJoin" class="errors-text">Field is required</span>
-        <br>
 
         <label for="DateLeave">DateLeave: </label>
         <input type="date" name="DateLeave" id="DateLeave" />
         <span id="errorDateLeave" class="errors-text">Uhhhh what</span>
-        <br>
 
-        <div>
-            <p id="errorsSummary">Form has errors</p>
-            <input type="submit" value="Submit" /> <br>
-            <a href="../../pages/doctor/list.html">Cancel</a>
+        <div class="form-buttons">
+            <p id="errorsSummary" class="errors-text">Form has errors</p>
+            <input type="submit" value="Submit" class="form-button-submit"/>
+            <a href="../../pages/doctor/list.html" class="form-button-cancel">Cancel</a>
         </div>
-
+    </form>
     </form>
 </main>
 
