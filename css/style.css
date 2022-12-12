@@ -23,15 +23,8 @@ header, footer {
 }
 
 header {
-    overflow: auto;
-}
-
-header h1 {
-    float: left;
-}
-
-header img {
-    float: right;
+    display: flex;
+    justify-content: space-between;
 }
 
 nav {
@@ -40,13 +33,14 @@ nav {
 
 nav ul {
     padding: 0;
-    overflow: hidden;
+    /*overflow: hidden;*/
+    display: flex;
     list-style-type: none;
 }
 
-nav ul li {
-    float: left;
-}
+/*nav ul li {*/
+/*    float: left;*/
+/*}*/
 
 nav ul li a {
     display: inline-block;
@@ -215,8 +209,12 @@ textarea {
 }
 
 .form {
-    margin-left: 2rem; /*who's rem*/
-    width: 300px;
+    display: grid;
+    grid-template-columns: 150px 300px 1fr;
+    gap: 1rem;
+    margin-left: 2rem; /*who's rem*/ /*TODO do we keep this?*/
+    /*width: 300px;*/
+
 }
 
 .form select,
@@ -238,7 +236,8 @@ textarea {
 }
 
 .form-buttons {
-    margin-top: 2rem; /*still don't know who rem is*/
+    margin-top: 2rem; /*still don't know who rem is*/ /*TODO do we keep this?*/
+    grid-column: 1 / span 2;
 }
 
 .form-button-submit,
@@ -257,7 +256,7 @@ textarea {
 
 .form input.error-input,
 .form select.error-input {
-    border: 3px solid
+    border: 3px solid #e74c3c;
 }
 
 .errors-text {
