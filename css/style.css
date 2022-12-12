@@ -5,7 +5,7 @@ html {
 }
 
 body {
-    min-width: 600px;
+    min-width: 360px;
 }
 
 header, main, footer {
@@ -142,7 +142,7 @@ main h2 {
     padding: 0.5rem 1rem;/*who's rem*/
 }
 
-.list-actions-button-details, .list-actions-button-edit {
+.list-actions-button-details, .list-actions-button-edit, .list-actions-button-delete {
     margin-right: 1rem; /*who's rem*/
 }
 
@@ -272,6 +272,119 @@ textarea {
     color: #c0392b;
 }
 
+@media all and (max-width: 720px) {
+    /*Header*/
+    header {
+        flex-direction: column;
+    }
+    header h1 {
+        text-align: center;
+    }
+    header img {
+        align-self: center;
+        /*max-width:100%;*/
+        /*max-height:100%;*/
+    }
+
+
+    /*Nav ul*/
+    nav ul {
+        flex-wrap: wrap;
+    }
+    nav ul li {
+        flex-basis: 50%;
+        text-align: center;
+    }
+    nav ul li a {
+        display: block;
+    }
+
+
+    /*Form*/
+    .form {
+        grid-template-columns: 1fr;
+        row-gap: unset;
+        margin-left: unset;
+    }
+    .form-buttons {
+        grid-column: 1/1;
+    }
+
+    /*Table*/
+    .list-actions-button-details,
+    .list-actions-button-edit,
+    .list-actions-button-delete {
+        text-align: center;
+        display: grid;
+        max-width: 75px;
+        min-width: 30px;
+        height: 30px;
+        padding: 0.25rem 1rem; /*who's rem*/
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .table-list th,
+    .table-list td {
+        padding: 0.1rem; /*so who's rem?*/
+    }
+
+    .list-actions {
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .list-actions li {
+        alignment: center;
+        display: grid;
+    }
+
+}
+@media all and (max-width: 400px) {
+    body,
+    nav,
+    nav ul,
+    header,
+    main,
+    footer {
+        margin: 0;
+    }
+
+    nav ul li {
+        flex-basis: 100%;
+    }
+
+    .list-actions-button-details,
+    .list-actions-button-edit,
+    .list-actions-button-delete {
+        text-align: center;
+        display: grid;
+        width: 20px;
+        height: 20px;
+        padding: 0.15rem 0.15rem; /*who's rem*/
+        margin-left: auto;
+        margin-right: auto;
+        font-size: 75%;
+    }
+    .table-list th,
+    .table-list td {
+        padding: 0rem; /*so who's rem?*/
+        font-size: 75%;
+    }
+
+    .list-actions {
+        margin: 0;
+        text-align: center;
+        list-style-type: none;
+        padding: 0;
+    }
+
+    .list-actions li {
+        alignment: center;
+        display: grid;
+    }
+}
 
 
 
