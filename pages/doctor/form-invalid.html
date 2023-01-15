@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
+    <script type="application/javascript" src="../../js/validationDoctorForm.js"></script>
     <link rel="stylesheet" href="../../css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -23,9 +25,9 @@
 
 <main>
     <h2>New Psychopath</h2>
-    <form class="form">
+    <form class="form" novalidate onsubmit="return validateForm()">
         <label for="Name">Name:  <span class="symbol-required">*</span></label>
-        <input type="text" name="Name" id="Name" class="error-input" required />
+        <input type="text" name="Name" id="Name" placeholder="1-200 characters" class="error-input" required />
         <span id="errorName" class="errors-text">Field is required</span>
 
         <label for="DateJoin">DateJoin:  <span class="symbol-required">*</span></label>
@@ -41,7 +43,6 @@
             <input type="submit" value="Submit" class="form-button-submit"/>
             <a href="../../pages/doctor/list.html" class="form-button-cancel">Cancel</a>
         </div>
-    </form>
     </form>
 </main>
 

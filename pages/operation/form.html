@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="application/javascript" src="../../js/validationOperationForm.js"></script>
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
     <link rel="stylesheet" href="../../css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -23,10 +25,10 @@
 
 <main>
     <h2>New Operation</h2>
-    <form class="form">
+    <form class="form" novalidate onsubmit="return validateForm()">
         <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
         <select name="WillingOrganDonor" id="WillingOrganDonor" required>
-            <option>-- Choose WillingOrganDonor --</option>
+            <option value="0">-- Choose WillingOrganDonor --</option>
             <option value="1">Jonathan Mother</option>
         </select>
         <span id="errorWillingOrganDonor" class="errors-text"></span>
@@ -50,7 +52,7 @@
         <span id="errorSuccessful" class="errors-text"></span>
 
         <label for="BedNumber">BedNumber:  <span class="symbol-required">*</span></label>
-        <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" required/>
+        <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" placeholder="1-99" required/>
         <span id="errorBedNumber" class="errors-text"></span>
 
         <label for="OperationTimestamp">OperationTimestamp:  <span class="symbol-required">*</span></label>
@@ -58,7 +60,7 @@
         <span id="errorOperationTimestamp" class="errors-text"></span>
 
         <div class="form-buttons">
-            <p id="errorsSummary"></p>
+            <p id="errorsSummary" class="errors-text"></p>
             <input type="submit" value="Submit" class="form-button-submit" />
             <a href="../../pages/operation/list.html" class="form-button-cancel">Cancel</a>
         </div>

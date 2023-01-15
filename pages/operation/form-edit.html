@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="application/javascript" src="../../js/validationOperationForm.js"></script>
+  <script type="application/javascript" src="../../js/validationCommon.js"></script>
   <link rel="stylesheet" href="../../css/style.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -23,7 +25,7 @@
 
 <main>
   <h2>New Operation</h2>
-  <form class="form">
+  <form class="form" novalidate onsubmit="return validateForm()">
     <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
     <select name="WillingOrganDonor" id="WillingOrganDonor" required>
       <option value="1">Jonathan Mother</option>

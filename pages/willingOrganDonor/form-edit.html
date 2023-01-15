@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <script type="application/javascript" src="../../js/validationCommon.js"></script>
   <link rel="stylesheet" href="../../css/style.css" />
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -24,7 +25,7 @@
 
 <main>
   <h2>Edit a WILLING Organ Donor</h2>
-  <form class="form">
+  <form class="form" novalidate onsubmit="return validateForm()">
     <label for="Name">Name:  <span class="symbol-required">*</span></label>
     <input type="text" name="Name" id="Name" value="Jonathan Mother" required />
     <span id="errorName" class="errors-text"></span>
@@ -42,7 +43,7 @@
     <span id="errorPatientTill" class="errors-text"></span>
 
     <div class="form-buttons">
-      <p id="errorsSummary"></p>
+      <p id="errorsSummary" class="errors-text"></p>
       <input type="submit" value="Submit" class="form-button-submit" />
       <a href="../../pages/willingOrganDonor/list.html" class="form-button-cancel">Cancel</a>
     </div>

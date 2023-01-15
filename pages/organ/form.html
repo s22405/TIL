@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <script type="application/javascript" src="../../js/validationOrganForm.js"></script>
+    <script type="application/javascript" src="../../js/validationCommon.js"></script>
     <link rel="stylesheet" href="../../css/style.css" />
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
@@ -23,17 +25,17 @@
 
 <main>
     <h2>New Organ</h2>
-    <form class="form">
+    <form class="form" novalidate onsubmit="return validateForm()">
         <label for="Name">Name:  <span class="symbol-required">*</span></label>
-        <input type="text" name="Name" id="Name" required />
+        <input type="text" name="Name" id="Name" placeholder="1-200 characters" required />
         <span id="errorName" class="errors-text"></span>
 
         <label for="Price">Price:  <span class="symbol-required">*</span></label>
-        <input type="number" step="0.01" name="Price" id="Price" min="0" max="99999.99" required />
+        <input type="number" step="0.01" name="Price" id="Price" min="0" max="99999.99" placeholder="0-99999.99" required />
         <span id="errorPrice" class="errors-text"></span>
 
         <div class="form-buttons">
-            <p id="errorsSummary"></p>
+            <p id="errorsSummary" class="errors-text"></p>
             <input type="submit" value="Submit" class="form-button-submit" />
             <a href="../../pages/organ/list.html" class="form-button-cancel">Cancel</a>
         </div>
