@@ -1,4 +1,3 @@
-import { operationDetailsList } from './operationApiMockData';
 const operationsBaseUrl = 'http://localhost:3000/api/operations';
 
 export function getOperationsApiCall() {

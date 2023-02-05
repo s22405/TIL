@@ -12,3 +12,29 @@ export function getOrganByIdApiCall(idOrgan) {
     const promise = fetch(url);
     return promise;
 }
+
+export function addOrganApiCall(organ) {
+    const organString = JSON.stringify(organ)
+    const options = {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: organString
+    }
+    const promise = fetch(organsBaseUrl, options);
+    return promise;
+}
+export function updateOrganApiCall(idOrgan, organ) {
+    const url = `${organsBaseUrl}/${idOrgan}`
+    const organString = JSON.stringify(organ)
+    const options = {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: organString
+    }
+    const promise = fetch(url, options);
+    return promise;
+}

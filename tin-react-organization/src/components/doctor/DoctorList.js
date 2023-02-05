@@ -8,19 +8,39 @@ function DoctorList() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [doctors, setDoctors] = useState([]);
     const doctorList = getDoctorsApiCall();
+
+    let content;
+
+    function fetchDoctorList() {
+        getDoctorsApiCall()
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true)
+                    setDoctors(data)
+                },
+                (error) => {
+                    setIsLoaded(true)
+                    setError(error)
+                }
+            )
+    }
+
     useEffect(() => {
         fetchDoctorList()
     }, [])
 
-    let content;
 
     if (error) {
         content = <p>Error: {error.message}</p>
     } else if (!isLoaded) {
         content = <p>Loading doctors data...</p>
+    } else if(doctors.length==0) {
+        content = <p>No doctors.</p>
     } else {
         content = <DoctorListTable doctorList={doctors} />
     }
+
 
     return (
         <main>
@@ -70,22 +90,6 @@ function DoctorList() {
     //         <p><Link to="add" className="button-add">Add a new psychopath</Link></p>
     //     </main>
     // )
-
-    function fetchDoctorList() {
-        getDoctorsApiCall()
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true)
-                    setDoctors(data)
-                },
-                (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
-    }
-
 }
 
 export default DoctorList

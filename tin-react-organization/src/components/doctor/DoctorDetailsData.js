@@ -2,7 +2,7 @@ import { getFormattedDate } from "../../helpers/dateHelper"
 import React from "react";
 
 function DoctorDetailsData(props) {
-    const doctor = props.doctor
+    const doctor = props.doctorData
     return (
         <>
             <p>Name: {doctor.name}</p>

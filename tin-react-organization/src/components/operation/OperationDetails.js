@@ -5,14 +5,13 @@ import {getOperationByIdApiCall} from "../../apiCalls/operationApiCalls";
 import OperationDetailsData from "./OperationDetailsData";
 
 function OperationDetails() {
-    let { idOperation } = useParams();
-    idOperation = parseInt(idOperation);
-    const operation = getOperationByIdApiCall(idOperation);
-
     const [ope, setOperation] = useState(null)
     const [error, setError] = useState(null)
     const [isLoaded, setIsLoaded] = useState(false)
     const [message, setMessage] = useState(null)
+
+    let { idOperation } = useParams();
+    idOperation = parseInt(idOperation);
 
     function fetchOperationDetails() {
         getOperationByIdApiCall(idOperation)
@@ -45,14 +44,12 @@ function OperationDetails() {
         content = <p>Error: {error.message}</p>
     } else if (!isLoaded) {
         content = <p>Loading operation data...</p>
-    } else if (message) {
-        content = <p>{message}</p>
     } else {
         content = <OperationDetailsData operationData={ope} />
     }
+
     return (
         <main>
-            <h2>Operation data</h2>
             {content}
             <div className="section-buttons">
                 <Link to="/operations" className="button-back">Back</Link>

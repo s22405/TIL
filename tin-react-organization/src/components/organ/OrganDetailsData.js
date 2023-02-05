@@ -2,7 +2,7 @@ import { getFormattedDate } from "../../helpers/dateHelper"
 import React from "react";
 
 function OrganDetailsData(props) {
-    const organ = props.organ;
+    const organ = props.organData
     return (
         <>
             <p>Name: {organ.name}</p>

@@ -17,9 +17,9 @@ function OperationListTable(props) {
                 </tr>
             </thead>
             <tbody>
-            {operations.map(operation =>
-                <OperationListTableRow operationData={operation} key={operation._id} />
-            )}
+                {operations.map(operation =>
+                    <OperationListTableRow operationData={operation} key={operation._id} />
+                )}
             </tbody>
         </table >
     )

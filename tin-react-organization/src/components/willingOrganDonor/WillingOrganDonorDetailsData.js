@@ -1,7 +1,7 @@
 import { getFormattedDate } from "../../helpers/dateHelper"
 
 function WillingOrganDonorDetailsData(props) {
-    const willingOrganDonor = props.willingOrganDonor;
+    const willingOrganDonor = props.willingOrganDonorData;
     return (
         <>
             <p>Name: {willingOrganDonor.name}</p>

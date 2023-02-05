@@ -8,19 +8,39 @@ function OrganList() {
     const [isLoaded, setIsLoaded] = useState(false);
     const [organs, setOrgans] = useState([]);
     const organList = getOrgansApiCall();
+
+    let content;
+
+    function fetchOrganList() {
+        getOrgansApiCall()
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true)
+                    setOrgans(data)
+                },
+                (error) => {
+                    setIsLoaded(true)
+                    setError(error)
+                }
+            )
+    }
+
     useEffect(() => {
         fetchOrganList()
     }, [])
-
-    let content;
 
     if (error) {
         content = <p>Error: {error.message}</p>
     } else if (!isLoaded) {
         content = <p>Loading organs data...</p>
+    } else if(organs.length==0) {
+        content = <p>No organs.</p>
     } else {
         content = <OrganListTable organList={organs} />
     }
+
+
 
     return (
         <main>
@@ -69,20 +89,7 @@ function OrganList() {
     //     </main>
     // )
 
-    function fetchOrganList() {
-        getOrgansApiCall()
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true)
-                    setOrgans(data)
-                },
-                (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
-    }
+
 }
 
 export default OrganList

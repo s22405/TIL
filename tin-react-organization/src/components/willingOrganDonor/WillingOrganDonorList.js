@@ -8,19 +8,38 @@ function WillingOrganDonorList() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [willingOrganDonors, setWillingOrganDonors] = useState([]);
+
+    let content;
+
+    function fetchWillingOrganDonorList() {
+        getWillingOrganDonorsApiCall()
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true)
+                    setWillingOrganDonors(data)
+                },
+                (error) => {
+                    setIsLoaded(true)
+                    setError(error)
+                }
+            )
+    }
+
     useEffect(() => {
         fetchWillingOrganDonorList()
     }, [])
-
-    let content;
 
     if (error) {
         content = <p>Error: {error.message}</p>
     } else if (!isLoaded) {
         content = <p>Loading willingOrganDonors data...</p>
+    } else if(willingOrganDonors.length==0) {
+        content = <p>No willing organ donors.</p>
     } else {
         content = <WillingOrganDonorListTable willingOrganDonorList={willingOrganDonors} />
     }
+
 
     return (
         <main>
@@ -73,20 +92,6 @@ function WillingOrganDonorList() {
     //     </main>
     // )
 
-    function fetchWillingOrganDonorList() {
-        getWillingOrganDonorsApiCall()
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true)
-                    setWillingOrganDonors(data)
-                },
-                (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
-    }
 }
 
 export default WillingOrganDonorList

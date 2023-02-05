@@ -7,17 +7,34 @@ function OperationList() {
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
     const [operations, setOperations] = useState([]);
-    const operationList = getOperationsApiCall;
+
+    let content;
+
+    function fetchOperationList() {
+        getOperationsApiCall()
+            .then(res => res.json())
+            .then(
+                (data) => {
+                    setIsLoaded(true)
+                    setOperations(data)
+                },
+                (error) => {
+                    setIsLoaded(true)
+                    setError(error)
+                }
+            )
+    }
+
     useEffect(() => {
         fetchOperationList()
     }, [])
-
-    let content;
 
     if (error) {
         content = <p>Error: {error.message}</p>
     } else if (!isLoaded) {
         content = <p>Loading operations data...</p>
+    } else if(operations.length==0) {
+        content = <p>No operations.</p>
     } else {
         content = <OperationListTable operationList={operations} />
     }
@@ -76,23 +93,6 @@ function OperationList() {
     //         <p><Link to="add" className="button-add">Add a new Operation</Link></p>
     //     </main>
     // )
-
-
-
-    function fetchOperationList() {
-        getOperationsApiCall()
-            .then(res => res.json())
-            .then(
-                (data) => {
-                    setIsLoaded(true)
-                    setOperations(data)
-                },
-                (error) => {
-                    setIsLoaded(true)
-                    setError(error)
-                }
-            )
-    }
 }
 
 export default OperationList
