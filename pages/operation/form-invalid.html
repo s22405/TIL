@@ -24,37 +24,40 @@
 <main>
     <h2>New Operation</h2>
     <form class="form">
-        <label for="WillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
-        <select name="WillingOrganDonor" id="WillingOrganDonor" class="error-input" required>
+        <label for="idWillingOrganDonor">WillingOrganDonor:  <span class="symbol-required">*</span></label>
+        <select name="idWillingOrganDonor" id="idWillingOrganDonor" class="error-input" required>
             <option>-- Choose WillingOrganDonor --</option>
             <option value="1">Jonathan Mother</option>
         </select>
-        <span id="errorWillingOrganDonor" class="errors-text">Field is required</span>
+        <span id="errorIdWillingOrganDonor" class="errors-text">Field is required</span>
 
-        <label for="Doctor">Doctor:  <span class="symbol-required">*</span></label>
-        <select name="Doctor" id="Doctor" class="error-input" required>
+        <label for="idDoctor">Doctor:  <span class="symbol-required">*</span></label>
+        <select name="idDoctor" id="idDoctor" class="error-input" required>
             <option>-- Choose Doctor --</option>
             <option value="1">Barry The Chopper</option>
         </select>
-        <span id="errorDoctor" class="errors-text">Field is required</span>
+        <span id="errorIdDoctor" class="errors-text">Field is required</span>
 
-        <label for="Organ">Organ:  <span class="symbol-required">*</span></label>
-        <select name="Organ" id="Organ" class="error-input" required>
+        <label for="idOrgan">Organ:  <span class="symbol-required">*</span></label>
+        <select name="idOrgan" id="idOrgan" class="error-input" required>
             <option>-- Choose Organ --</option>
             <option value="1">Heart</option>
         </select>
-        <span id="errorOrgan" class="errors-text">Field is required</span>
+        <span id="errorIdOrgan" class="errors-text">Field is required</span>
 
-        <label for="Successful">Successful: </label>
-        <input type="checkbox" name="Successful" id="Successful" class="error-input"/>
-        <span id="errorSuccessful" class="errors-text">Field is... wait what</span>
+        <label for="successful">Successful: </label>
+        <select name="successful" id="successful">
+            <option value="true">True</option>
+            <option value="false">False</option>
+        </select>
+        <span id="errorSuccessful" class="errors-text"></span>
 
-        <label for="BedNumber">BedNumber:  <span class="symbol-required">*</span></label>
-        <input type="number" name="BedNumber" id="BedNumber" min="1" max="99" class="error-input" required/>
+        <label for="bedNumber">BedNumber:  <span class="symbol-required">*</span></label>
+        <input type="number" name="bedNumber" id="bedNumber" min="1" max="99" class="error-input" required/>
         <span id="errorBedNumber" class="errors-text">Field is required</span>
 
-        <label for="OperationTimestamp">OperationTimestamp:  <span class="symbol-required">*</span></label>
-        <input type="date" name="OperationTimestamp" id="OperationTimestamp" class="error-input" required/>
+        <label for="operationTimestamp">OperationTimestamp:  <span class="symbol-required">*</span></label>
+        <input type="date" name="operationTimestamp" id="operationTimestamp" class="error-input" required/>
         <span id="errorOperationTimestamp" class="errors-text">Field is required</span>
 
         <div class="form-buttons">
