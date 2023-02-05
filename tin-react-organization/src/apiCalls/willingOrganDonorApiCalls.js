@@ -1,10 +1,14 @@
-import { willingOrganDonorList, willingOrganDonorDetailsList } from './willingOrganDonorApiMockData'
+import { willingOrganDonorDetailsList } from './willingOrganDonorApiMockData';
+
+const willingOrganDonorsBaseUrl = 'http://localhost:3000/api/willingOrganDonors';
 
 export function getWillingOrganDonorsApiCall() {
-    return willingOrganDonorList;
+    const promise = fetch(willingOrganDonorsBaseUrl);
+    return promise;
 }
 
 export function getWillingOrganDonorByIdApiCall(idWillingOrganDonor) {
-    const willingOrganDonor = willingOrganDonorDetailsList.find(willingOrganDonor => willingOrganDonor._id === idWillingOrganDonor)
-    return willingOrganDonor;
+    const url = `${willingOrganDonorsBaseUrl}/${idWillingOrganDonor}`;
+    const promise = fetch(url);
+    return promise;
 }

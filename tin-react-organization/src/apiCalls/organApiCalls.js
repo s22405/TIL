@@ -1,10 +1,14 @@
-import { organList, organDetailsList } from './organApiMockData'
+import { organDetailsList } from './organApiMockData';
+
+const organsBaseUrl = 'http://localhost:3000/api/organs';
 
 export function getOrgansApiCall() {
-    return organList;
+    const promise = fetch(organsBaseUrl);
+    return promise;
 }
 
 export function getOrganByIdApiCall(idOrgan) {
-    const organ = organDetailsList.find(organ => organ._id === idOrgan)
-    return organ;
+    const url = `${organsBaseUrl}/${idOrgan}`;
+    const promise = fetch(url);
+    return promise;
 }

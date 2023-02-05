@@ -1,10 +1,12 @@
-import { doctorList, doctorDetailsList } from './doctorApiMockData'
+const doctorsBaseUrl = 'http://localhost:3000/api/doctors';
 
 export function getDoctorsApiCall() {
-    return doctorList;
+    const promise = fetch(doctorsBaseUrl);
+    return promise;
 }
 
 export function getDoctorByIdApiCall(idDoctor) {
-    const doctor = doctorDetailsList.find(doctor => doctor._id === idDoctor)
-    return doctor;
+    const url = `${doctorsBaseUrl}/${idDoctor}`;
+    const promise = fetch(url);
+    return promise;
 }
