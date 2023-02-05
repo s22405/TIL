@@ -1,6 +1,8 @@
 import { Link } from 'react-router-dom';
+import { getWillingOrganDonorsApiCall} from "../../apiCalls/willingOrganDonorApiCalls";
 
 function WillingOrganDonorList() {
+    const willingOrganDonorList = getWillingOrganDonorsApiCall();
     return (
         <main>
             <h2>List of WILLING Organ Donors</h2>
@@ -15,28 +17,30 @@ function WillingOrganDonorList() {
                     </tr>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>Jonathan Mother</td>
-                        <td>1</td>
-                        <td>05 April 5500</td>
-                        <td>06 April 5500</td>
-                        <td>
-                            <ul className="list-actions">
-                                <li>
-                                    <Link to="../../pages/willingOrganDonor/form-details.html" className="list-actions-button-details">Details</Link>
-                                </li>
-                                <li>
-                                    <Link to="../../pages/willingOrganDonor/form-edit.html" className="list-actions-button-edit">Edit</Link>
-                                </li>
-                                <li>
-                                    <Link to="https://www.youtube.com/watch?v=p7YXXieghto" className="list-actions-button-delete">Delete</Link>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
+                    {willingOrganDonorList.map(willingOrganDonor => (
+                        <tr key={willingOrganDonor._id}>
+                            <td>{willingOrganDonor.name}</td>
+                            <td>{willingOrganDonor.cellNumber}</td>
+                            <td>{willingOrganDonor.patientFrom}</td>
+                            <td>{willingOrganDonor.patientTill}</td>
+                            <td>
+                                <ul className="list-actions">
+                                    <li>
+                                        <Link to={`details/${willingOrganDonor._id}`} className="list-actions-button-details">Details</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={`edit/${willingOrganDonor._id}`} className="list-actions-button-edit">Edit</Link>
+                                    </li>
+                                    <li>
+                                        <Link to={`delete/${willingOrganDonor._id}`} className="list-actions-button-delete">Delete</Link>
+                                    </li>
+                                </ul>
+                            </td>
+                        </tr>
+                    ))}
                 </tbody>
             </table>
-            <p><Link to="../../pages/willingOrganDonor/form.html" className="button-add">Add a new WILLING Organ Donor</Link></p>
+            <p><Link to="add" className="button-add">Add a new WILLING Organ Donor</Link></p>
         </main>
     )
 }
